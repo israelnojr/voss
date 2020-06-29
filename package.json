@@ -2,6 +2,11 @@
   "name": "voss",
   "version": "1.0.0",
   "private": true,
+  "description": "A music sharing system for artist",
+  "author": {
+    "name": "Iloba Israel",
+    "email": "israeliloba@gmail.com"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
