@@ -5,10 +5,7 @@
 
     <!-- Begin | Main Container [[ Find at scss/base/core.scss ]] -->
     <div class="main-container" id="appRoute">
-      <!-- Begin | Section [[ Find at scss/base/core.scss ]] -->
-      <div class="section">
-        <HomeComponent />
-      </div>
+      <HomeComponent />
     </div>
   </div>
 </template>

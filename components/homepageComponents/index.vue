@@ -1,17 +1,21 @@
 <template>
   <div>
     <TopChart />
-    <Carousel />
+    <Section />
+    <MainRow />
   </div>
 </template>
 
 <script>
-import Carousel from "./carousel";
+import Section from "./section";
 import TopChart from "./topchart";
+import MainRow from "./mainrow";
+
 export default {
   components: {
     TopChart,
-    Carousel
+    Section,
+    MainRow
   }
 };
 </script>
