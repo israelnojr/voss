@@ -1,5 +1,11 @@
 <template>
   <div>
-    Hello
+    <HomepageComponents />
   </div>
 </template>
+
+<script>
+export default {
+  components: {}
+};
+</script>

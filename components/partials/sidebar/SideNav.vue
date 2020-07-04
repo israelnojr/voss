@@ -5,28 +5,28 @@
       <li class="nav-item nav-header">Browse Music</li>
 
       <li v-for="list in sideList" :key="list.name" class="nav-item">
-        <a
-          :href="list.link"
+        <nuxt-link
+          :to="list.link"
           :class="[currentPage === '/' + list.link ? isActive : '', 'nav-link']"
-          ><i :class="list.icon"></i><span>{{ list.name }}</span></a
+          ><i :class="list.icon"></i><span>{{ list.name }}</span></nuxt-link
         >
       </li>
       <li class="nav-item nav-header">Your Music</li>
 
       <li v-for="music in yourmusics" :key="music.name" class="nav-item">
-        <a
-          :href="music.link"
+        <nuxt-link
+          :to="music.link"
           :class="[
             currentPage === '/' + music.link ? isActive : '',
             'nav-link'
           ]"
-          ><i :class="music.icon"></i><span>{{ music.name }}</span></a
+          ><i :class="music.icon"></i><span>{{ music.name }}</span></nuxt-link
         >
       </li>
       <li class="nav-item nav-header">Music Events</li>
       <li class="nav-item">
-        <a href="events.html" class="nav-link"
-          ><i class="la la-calendar"></i><span>Events</span></a
+        <nuxt-link to="events.html" class="nav-link"
+          ><i class="la la-calendar"></i><span>Events</span></nuxt-link
         >
       </li>
     </ul>

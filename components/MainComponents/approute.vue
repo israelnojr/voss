@@ -5,16 +5,17 @@
 
     <!-- Begin | Main Container [[ Find at scss/base/core.scss ]] -->
     <div class="main-container" id="appRoute">
-      <HomeComponent />
+      <Home />
     </div>
   </div>
 </template>
 
 <script>
-import HomeComponent from "../homepageComponents";
+import Home from "../homepageComponents";
+import Genres from "../genresComponents";
 export default {
   components: {
-    HomeComponent
+    Home
   }
 };
 </script>
