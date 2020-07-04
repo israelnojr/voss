@@ -40,12 +40,12 @@ export default {
       }
     ],
     script: [
-      // {
-      //   src: "js/vendors.bundle.js"
-      // },
-      // {
-      //   src: "js/scripts.bundle.js"
-      // }
+      {
+        src: "js/vendors.bundle.js"
+      },
+      {
+        src: "js/scripts.bundle.js"
+      }
     ]
   },
   /*
