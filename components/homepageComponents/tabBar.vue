@@ -1,36 +1,49 @@
 <template>
-  <!-- Begin | Line Tabs [[ Find at scss/framework/components/line-tabs.scss ]] -->
-  <ul
-    class="nav nav-tabs line-tabs line-tabs-primary text-uppercase mb-4"
-    id="songsList"
-    role="tablist"
-  >
-    <li
-      v-for="tab in tabList"
-      :key="tab.title"
-      :title="tab.title"
-      class="nav-item"
+  <div>
+    <ul
+      class="nav nav-tabs line-tabs line-tabs-primary text-uppercase mb-4"
+      id="songsList"
+      role="tablist"
     >
-      <a
-        class="nav-link"
-        :id="tab.link + '-tab'"
-        :data-toggle="tab"
-        :href="'#' + tab.link"
-        :role="tab"
-        :aria-controls="tab.link"
-        :aria-selected="true"
-        >{{ tab.title }}</a
+      <li
+        v-for="tab in tabList"
+        :key="tab.title"
+        :title="tab.title"
+        class="nav-item"
       >
-    </li>
-  </ul>
-  <!-- End | Line Tabs -->
+        <a
+          class="nav-link"
+          :id="tab.link + '-tab'"
+          data-toggle="tab"
+          :href="'#' + tab.link"
+          role="tab"
+          :aria-controls="tab.link"
+          aria-selected="true"
+          >{{ tab.title }}</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content" id="songsListContent">
+      <div
+        v-for="song in loadedSongs"
+        :key="song.id"
+        class="tab-pane fade show active mb-2"
+        :id="song.tab"
+        role="tabpanel"
+        :aria-labelledby="song.tab + '-tab'"
+      >
+        <div class="custom-list">
+          <TabCard :id="song.id" :name="song.name" :artist="song.artist" />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      isActive: "active",
       tabList: [
         { title: "Trending", link: "trending" },
         { title: "Recent", link: "recent" },
@@ -39,12 +52,9 @@ export default {
     };
   },
   computed: {
-    currentPage() {
-      return this.$route.param;
+    loadedSongs() {
+      return this.$store.getters.loadedSongs;
     }
-  },
-  created() {
-    console.log(this.$route.param);
   }
 };
 </script>

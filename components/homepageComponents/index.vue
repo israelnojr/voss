@@ -5,7 +5,15 @@
       <!-- Begin | Section [[ Find at scss/base/core.scss ]] -->
       <div class="section">
         <HeaderTitle title="Top Chart" subTitle="Listen top chart" />
-        <Carousel :songs="songs" />
+        <div class="carousel-item-5 arrow-pos-3">
+          <Carousel
+            v-for="song in loadedSongs"
+            :key="song.id"
+            :id="song.id"
+            :name="song.name"
+            :artist="song.artist"
+          />
+        </div>
       </div>
       <!-- End | Section -->
 
@@ -22,24 +30,6 @@
         <!-- Begin | Section [[ Find at scss/base/core.scss ]] -->
         <div class="section col-xl-5 col-lg-6">
           <TabBar />
-          <!-- Begin | Tab Content -->
-          <div class="tab-content" id="songsListContent">
-            <div
-              class="tab-pane fade show active"
-              id="recent"
-              role="tabpanel"
-              aria-labelledby="recent-tab"
-            >
-              <!-- Begin | Custom List [[ Find at scss/framework/components/custom-list.scss ]] -->
-              <div class="custom-list">
-                <!-- Begin | Custom List Item -->
-                <TabCard :songs="songs" />
-                <!-- End | Custom List Item -->
-              </div>
-              <!-- End | Custom List -->
-            </div>
-          </div>
-          <!-- End | Tab Content -->
         </div>
         <!-- End | Section -->
       </div>
@@ -51,7 +41,15 @@
           pageLink="release"
           subTitle="Listen recently release music"
         />
-        <Carousel :songs="songs" />
+        <div class="carousel-item-5 arrow-pos-3">
+          <Carousel
+            v-for="song in loadedSongs"
+            :key="song.id"
+            :id="song.id"
+            :name="song.name"
+            :artist="song.artist"
+          />
+        </div>
       </div>
       <!-- End | Section -->
 
@@ -61,12 +59,19 @@
           title="Featured Artists"
           subTitle="Select you best to listen"
         />
-        <Card :artists="artists" />
+        <div class="carousel-item-6 arrow-pos-2">
+          <Card
+            v-for="artist in loadedArtists"
+            :key="artist.id"
+            :slug="artist.slug"
+            :name="artist.name"
+          />
+        </div>
       </div>
       <!-- End | Section -->
     </div>
     <!-- End | Main Container -->
-    <br /><br /><br />
+    <br />
     <!-- Begin | Audio Player [[ Find at scss/framework/base/audio-player/audio-player.scss ]] -->
     <div id="audioPlayer" class="player-primary">
       <!-- Begin | Audio Player Progress -->
@@ -209,115 +214,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      songs: [
-        {
-          id: 1,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 2,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 3,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 4,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 5,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 6,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 7,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        },
-        {
-          id: 8,
-          name: "Hey not me",
-          artist: "Rasomi Pelina",
-          album: "Find Soul",
-          url: "~/assets/audio/ringtone-6.mp3",
-          cover_art_url: "~/assets/images/cover/small/6.jpg"
-        }
-      ],
-      artists: [
-        {
-          id: 1,
-          name: "Kiss Daniel",
-          slug: "jaman-jaman"
-        },
-        {
-          id: 2,
-          name: "Ice Price",
-          slug: "jaman-jaman"
-        },
-        {
-          id: 3,
-          name: "Joe Boy",
-          slug: "jaman-jaman"
-        },
-        {
-          id: 4,
-          name: "J Jamani",
-          slug: "jaman-jaman"
-        },
-        {
-          id: 5,
-          name: "Fire Boy",
-          slug: "jaman-jaman"
-        },
-        {
-          id: 6,
-          name: "2face Idibia",
-          slug: "jaman-jaman"
-        }
-      ],
-      string: ""
-    };
-  },
-  methods: {
-    hyphenSpace(string) {
-      string = string.trim
-        ? string.trim()
-        : string.replace(/^\string+|\string+$/g, "");
-      return string.split(/\string+/).join("-");
+  methods: {},
+  computed: {
+    loadedSongs() {
+      return this.$store.getters.loadedSongs;
+    },
+    loadedArtists() {
+      return this.$store.getters.loadedArtists;
     }
   }
 };

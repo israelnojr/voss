@@ -1,6 +1,6 @@
 <template>
   <ul class="dropdown-menu dropdown-menu-right">
-    <Favicon />
+    <FavIcon />
     <AddToPlayList />
     <DownloadIcon />
     <ShareIcon />
