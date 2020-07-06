@@ -12,7 +12,7 @@
       class="nav-item"
     >
       <a
-        :class="[currentPage === '/' + tab.link ? isActive : '', 'nav-link']"
+        class="nav-link"
         :id="tab.link + '-tab'"
         :data-toggle="tab"
         :href="'#' + tab.link"
@@ -49,4 +49,4 @@ export default {
 };
 </script>
 
-<style></style>>
+<style></style>

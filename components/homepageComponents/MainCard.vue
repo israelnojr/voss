@@ -5,26 +5,12 @@
       style="background-image: url('~/assets/images/background/vertical/1.jpg')"
     >
       <div class="event-content p-4">
-        <a href="event-details.html"><h6>New Year Party</h6></a>
-        <span class="countdown mb-3">
-          <div class="timer-wrapper">
-            <div class="timer-data">04</div>
-          </div>
-          <span class="time-separate">:</span>
-          <div class="timer-wrapper">
-            <div class="timer-data">14</div>
-          </div>
-          <span class="time-separate">:</span>
-          <div class="timer-wrapper">
-            <div class="timer-data">56</div>
-          </div>
-          <span class="time-separate">:</span>
-          <div class="timer-wrapper">
-            <div class="timer-data">04</div>
-          </div>
-        </span>
-        <a href="#" class="btn btn-bold btn-pill btn-air btn-warning btn-sm"
-          >Buy Ticket</a
+        <nuxt-link to="event-details.html"><h6>New Year Party</h6></nuxt-link>
+        <span class="countdown mb-3"></span>
+        <nuxt-link
+          to="#"
+          class="btn btn-bold btn-pill btn-air btn-warning btn-sm"
+          >Buy Ticket</nuxt-link
         >
       </div>
     </div>

@@ -1,11 +1,9 @@
 <template>
-  <ul class="custom-card--labels d-flex">
-    <li>
-      <span class="badge badge-pill badge-warning"
-        ><i class="la la-star"></i
-      ></span>
-    </li>
-  </ul>
+  <li>
+    <span class="badge badge-pill badge-warning"
+      ><i class="la la-star"></i
+    ></span>
+  </li>
 </template>
 
 <script>

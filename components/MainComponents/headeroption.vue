@@ -9,7 +9,7 @@
         class="language"
       >
         <span>Language</span>
-        <img src="../../assets/images/svg/translate.svg" alt="" />
+        <img src="~/assets/images/svg/translate.svg" alt="" />
       </a>
     </li>
     <li class="dropdown fade-in">
@@ -23,7 +23,7 @@
         aria-expanded="false"
       >
         <div class="avatar avatar-sm avatar-circle">
-          <img src="../../assets/images/users/thumb.jpg" alt="user" />
+          <img src="~/assets/images/users/thumb.jpg" alt="user" />
         </div>
         <span class="pl-2">Halo Admin</span>
       </a>

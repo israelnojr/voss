@@ -3,7 +3,9 @@
     <div v-for="song in songs" :key="song.id" class="custom-card">
       <div class="custom-card--img">
         <div class="custom-card--info">
-          <StarIcon />
+          <ul class="custom-card--labels d-flex">
+            <StarIcon />
+          </ul>
           <div class="dropdown dropdown-icon">
             <DropDownHandler />
             <DropDownList />
